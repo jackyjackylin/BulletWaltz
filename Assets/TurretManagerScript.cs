@@ -10,6 +10,10 @@ public class TurretManagerScript : MonoBehaviour {
 	public Ease RotateEaseFunction;
 	public float rotateDuration;
 
+	public Camera GameCamera;
+	public float CameraShakeDuration;
+	public float CameraShakeStrenth;
+
 
 	void Start () {
 		_animator = this.GetComponent<Animator> ();
@@ -17,6 +21,7 @@ public class TurretManagerScript : MonoBehaviour {
 
 	private void PlayShootAnimation(){
 		_animator.SetTrigger ("Shoot");
+		GameCamera.transform.DOShakePosition (CameraShakeDuration, CameraShakeStrenth);
 	}
 
 	private void PlayRotateAnimation(){
