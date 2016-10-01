@@ -11,16 +11,12 @@ public class FollowTheBeat : MonoBehaviour {
 
 	//前面三次拍點不做事，延遲0.5秒發射
 	private float shootCounter = -0.5f - beatPeriod*3;
-
 	private TurretManagerScript turret;
 
 	// Use this for initialization
 	void Start () {
-
 		turret = this.GetComponent<TurretManagerScript> ();
-	
 	}
-	
 	// Update is called once per frame
 	void Update () {
 
@@ -31,12 +27,9 @@ public class FollowTheBeat : MonoBehaviour {
 			turret.PlayRotateAnimation();
 			rotateCounter -= beatPeriod;
 		}
-
 		if (shootCounter > beatPeriod) {
 			turret.PlayShootAnimation();
 			shootCounter -= beatPeriod;
 		}
-
-	
 	}
 }
