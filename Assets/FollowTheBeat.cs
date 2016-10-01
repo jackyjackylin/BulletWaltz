@@ -3,10 +3,13 @@ using System.Collections;
 
 public class FollowTheBeat : MonoBehaviour {
 
-
+	//節奏時間距離
 	private const float beatPeriod = 1.485f;
 
+	//拍點提前0.2s旋轉
 	private float rotateCounter = 0.2f;
+
+	//前面三次拍點不做事，延遲0.5秒發射
 	private float shootCounter = -0.5f - beatPeriod*3;
 
 	private TurretManagerScript turret;
